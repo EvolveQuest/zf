@@ -1,22 +1,130 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
-    <title>在线服务</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>激活</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+      overflow: hidden; /* 隐藏超出部分 */
+    }
+
+    /* 设置上方背景为黑色 */
+    body:before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 40%; /* 上方黑色区域占页面高度的一半 */
+      background-color: #0d0d0d; /* 黑色背景 */
+      z-index: -1;
+      border-bottom-left-radius: 20px; /* 左下角设置为 20 度弧形 */
+      border-bottom-right-radius: 20px; /* 右下角设置为 20 度弧形 */
+    }
+
+    /* 设置下方背景为白色 */
+    body:after {
+      content: "";
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 60%; /* 下方白色区域占页面高度的一半 */
+      background-color: #fff; /* 白色背景 */
+      z-index: -1;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .header {
+      text-align: center;
+      margin-top: 45px; /* 向下移动 45px */
+    }
+
+    h1 {
+      font-size: 24px;
+      color: #00bff3; /* 设置颜色为 #00bff3 */
+    }
+
+    .countdown-container {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    #countdown {
+      font-size: 48px;
+      color: #de316c; /* 设置颜色为 #de316c */
+      margin-top: 45px; /* 向下移动 45px */
+    }
+
+    .qr-code-container {
+      text-align: center;
+      margin-bottom: 20px;
+      transform: translateY(40%); /* 向下移动 40% */
+    }
+
+    .qr-code {
+      width: 200px;
+      height: 200px;
+      margin-bottom: 10px;
+    }
+
+    .qr-code-text {
+      font-size: 16px;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    .copy-button-container {
+      text-align: center;
+      margin-top: 150px; /* 修改为 150px */
+    }
+
+    .copy-button {
+      display: inline-block;
+      background-color: #0d0d0d; /* 设置背景颜色为 #0d0d0d */
+      color: #fff; /* 设置文字颜色为白色 */
+      padding: 15px 30px; /* 设置按钮的上下 padding 为 15px，左右 padding 为 30px */
+      border: none;
+      cursor: pointer;
+      border-radius: 8px; /* 设置按钮四个角的弧度为 8px */
+      font-size: 20px; /* 设置按钮中文本的大小为 20px */
+    }
+
+    .copy-button span {
+      color: #00bff3; /* 设置文字颜色为 #00bff3 */
+    }
+  </style>
 </head>
 <body>
-    <div id="header">
-        
-        <h1>官方客服</h1>
+  <div class="container">
+    <div class="header">
+      <h1>仅支持TRC-20网络</h1>
     </div>
-    <div id="chat">
-        <div id="messages"></div>
-        <div id="inputArea">
-            <input type="text" id="messageInput" placeholder="在这里输入您的消息">
-            <button id="sendButton">发送</button>
-        </div>
+
+    <div class="countdown-container">
+      <div id="countdown">30:00</div>
+      <div id="message"></div>
     </div>
-    <script type="module" src="script.js"></script>
+
+    <div class="qr-code-container">
+      <img src="qr-code.png" alt="QR Code" class="qr-code">
+      <p class="qr-code-text">TBViG240CWBcXFZ8YLEoK9tpJ4tLFCL8Ty</p>
+    </div>
+
+    <div class="copy-button-container">
+  <p style="color: #de316c;">支付成功将自动激活并跳转至主界面，否则请重启登录。</p>
+</div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
