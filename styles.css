@@ -1,0 +1,136 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #f9f9f9;
+}
+
+#header {
+    background-color: #282828;
+    color: white;
+    padding: 2.0px; /* 将标题栏高度调小50% */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+#header img {
+    height: 50px;
+    margin-right: 10px;
+}
+
+#header h1 { 
+    font-size: 80%; /* 字体调小20% */
+    font-weight: normal; /* 字体不加粗 */
+}
+
+#chat {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+#messages {
+    flex: 1;
+    overflow-y: auto;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    height: calc(100% - 80px);
+}
+
+#messageInput {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+#inputArea {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-top: 1px solid #eee;
+    background-color: #f9f9f9;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #282828;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #282828;
+}
+
+.message {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.customerService {
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.user {
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.messageBox {
+    max-width: 70%;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #e1f5fe;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.customerService .messageBox {
+    background-color: #d1c4e9;
+}
+
+.user .messageBox {
+    background-color: #c8e6c9;
+}
+
+/* 新增样式 */
+.icons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    left:2px; /* 移动到左侧边缘 */
+    top: 40%; /* 与客服头像垂直对齐 */
+}
+
+.icons img {
+    margin: 15px 0; /* 图片间隔40px */
+    transition: transform 0.3s ease; /* 添加悬停效果的过渡 */
+}
+
+.icons img:hover {
+    transform: scale(1.2); /* 鼠标悬停时图标放大 */
+} 
