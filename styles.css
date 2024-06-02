@@ -1,34 +1,69 @@
-const countdown = document.getElementById('countdown');
-const message = document.getElementById('message');
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+}
 
-let minutes = 30;
-let seconds = 0;
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
 
-const updateCountdown = () => {
-  if (seconds === 0) {
-    if (minutes === 0) {
-      clearInterval(intervalId);
-      message.textContent = '请重试';
-      return;
-    } else {
-      minutes--;
-      seconds = 59;
-    }
-  } else {
-    seconds--;
-  }
+.header {
+  text-align: center;
+  margin-top: 45px; /* 向下移动 45px */
+}
 
-  const formattedTime = `${minutes}:${seconds.toString().padStart(2, '0')}`;
-  countdown.textContent = formattedTime;
-};
+h1 {
+  font-size: 45px;
+  color: #00bff3; /* 设置颜色为 #00bff3 */
+}
 
-const intervalId = setInterval(updateCountdown, 1000);
+.qr-code-container {
+  text-align: center;
+  margin-bottom: 40px;
+}
 
-// Copy button functionality (add this if needed)
-const copyButton = document.querySelector('.copy-button');
-const qrCodeText = document.querySelector('.qr-code-text');
+.qr-code {
+  width: 200px;
+  height: 200px;
+  margin-bottom: 10px;
+}
 
-copyButton.addEventListener('click', () => {
-  navigator.clipboard.writeText(qrCodeText.textContent);
-  alert('已复制到剪贴板');
-});
+.qr-code-text {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.copy-button {
+  background-color: #0d0d0d; /* 设置背景颜色为 #0d0d0d */
+  color: #fff; /* 设置文字颜色为白色 */
+  padding: 15px 30px; /* 设置按钮的上下 padding 为 15px，左右 padding 为 30px */
+  border: none;
+  cursor: pointer;
+  border-radius: 8px; /* 设置按钮四个角的弧度为 8px */
+  font-size: 20px; /* 设置按钮中文本的大小为 20px */
+  margin-top: 10px; /* 往下移动 10px */
+}
+
+.copy-button,
+.copy-button span {
+  color: #00bff3; /* 设置文字颜色为 #00bff3 */
+}
+
+.countdown-container {
+  text-align: center;
+}
+
+#countdown {
+  font-size: 48px;
+  color: #de316c; /* 设置颜色为 #de316c */
+  margin-top: 45px; /* 向下移动 45px */
+}
+
+#message {
+  font-size: 24px;
+  color: #333;
+}
